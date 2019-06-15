@@ -1,0 +1,149 @@
+[
+  {
+    "type": "record",
+    "name": "BulkSiteItem",
+    "namespace": "com.vec.smd.avro.schema",
+    "fields": [
+       {
+           "name": "itemId",
+            "type": [
+                 "null",
+                 "long"
+            ],
+            "default": null
+       },
+      {
+        "name": "vzSiteId",
+        "type": [
+          "null",
+          "string"
+        ],
+        "default": null
+      },
+      {
+        "name": "customerId",
+        "type": [
+          "null",
+          "string"
+        ],
+        "default": null
+      },
+      {
+        "name": "customerName",
+        "type": [
+          "null",
+          "string"
+        ],
+        "default": null
+      },
+      {
+        "name": "country",
+        "type": [
+          "null",
+          "string"
+        ],
+        "default": null
+      },
+      {
+        "name": "state",
+        "type": [
+          "null",
+          "string"
+        ],
+        "default": null
+      },
+      {
+        "name": "city",
+        "type": [
+          "null",
+          "string"
+        ],
+        "default": null
+      },
+      {
+        "name": "zipCode",
+        "type": [
+          "null",
+          "string"
+        ],
+        "default": null
+      },
+      {
+        "name": "addressLine1",
+        "type": [
+          "null",
+          "string"
+        ],
+        "default": null
+      },
+      {
+        "name": "addressLine2",
+        "type": [
+          "null",
+          "string"
+        ],
+        "default": null
+      },
+      {
+        "name": "status",
+        "type": [
+          "null",
+          "string"
+        ],
+        "default": null
+      },
+      {
+        "name": "validationError",
+        "type": [
+          "null",
+          "string"
+        ],
+        "default": null
+      }
+    ]
+  },
+  {
+    "type": "record",
+    "name": "BulkRequest",
+    "namespace": "com.vec.smd.avro.schema",
+    "fields": [
+      {
+        "name": "requestID",
+        "type": "long"
+      },
+      {
+        "name": "userID",
+        "type": [
+          "null",
+          "string"
+        ],
+        "default": null
+      },
+      {
+        "name": "userEmail",
+        "type": [
+          "null",
+          "string"
+        ],
+        "default": null
+      },
+      {
+        "name": "status",
+        "type": [
+          "null",
+          "string"
+        ],
+        "doc": "not sure if the status will be required so in the meantime , we use union for null values",
+        "default": null
+      },
+      {
+        "name": "bulkItems",
+        "type": {
+          "type": "array",
+          "items": "BulkSiteItem",
+          "default": []
+        }
+      }
+    ]
+  }
+]
