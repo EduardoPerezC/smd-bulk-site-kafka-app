@@ -16,6 +16,8 @@ public class BulkRequestItemStreamComponent {
     @Bean
     public KStream<String, BulkRequest> bulkRequestKStream(StreamsBuilder bulkStreamBuilder){
 
+        //this is a new change
+
         KStream<String, BulkRequest> kstream = bulkStreamBuilder.stream(Schemas.Topics.BULKREQUESTS.name(),Consumed.with(Schemas.Topics.BULKREQUESTS.keySerde(), Schemas.Topics.BULKREQUESTS.valueSerde()));
 
         kstream.foreach(new ForeachAction<String, BulkRequest>() {
